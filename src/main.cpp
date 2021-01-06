@@ -222,7 +222,7 @@ int main(void) {
 
   nrf_drv_clock_init();
 
-  debounceTimer = xTimerCreate ("debounceTimer", 200, pdFALSE, (void *) 0, DebounceTimerCallback);
+  debounceTimer = xTimerCreate ("debounceTimer", 2000, pdFALSE, (void *) 0, DebounceTimerCallback);
 
   systemTask.reset(new Pinetime::System::SystemTask(spi, lcd, spiNorFlash, twiMaster, touchPanel, lvgl, batteryController, bleController,
                                                     dateTimeController, notificationManager));
